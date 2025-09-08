@@ -33,4 +33,18 @@ Portal resmi **Universitas Mbojo Bima (UNMBO)** berbasis PHP, mencakup modul-mod
 ---
 
 ## 🗂️ Struktur Direktori
+univ-mbojo-bima/
+├── elearning/ # Modul pembelajaran online
+├── absensi/ # Modul absensi mahasiswa & dosen
+├── prodi/ # Informasi akademik & kurikulum tiap prodi
+├── humas/ # Modul humas: berita, event, pengumuman
+├── download/ # Materi unduhan (dokumen resmi, form)
+├── assets/ # Resource: CSS, JS, images
+├── build/ # Hasil build frontend (jika ada)
+├── public_html/ # Root publik (index.php, sitemap.xml, dll.)
+│ ├── index.php
+│ ├── default.php
+│ └── sitemap*.xml
+├── vendor/ # Dependencies (Composer)
+└── README.md
 
