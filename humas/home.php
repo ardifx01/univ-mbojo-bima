@@ -1,0 +1,438 @@
+<?php 
+require_once("../koneksi.php");
+ob_start();
+session_start();
+if(!isset($_SESSION['user_humas'])) {
+  header('location:index.php'); 
+} else { 
+  $username = $_SESSION['user_humas']; 
+}
+ ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Universitas Mbojo Bima</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../assets/img/logo-1.png" rel="icon">
+  <link href="../assets/img/logo-1.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="../assets/css/main.css" rel="stylesheet">
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.php" class="logo d-flex align-items-center me-auto">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="../assets/img/logo-1.png" alt="">
+        <div class="sitename" >
+          <h1>UNMBO</h1>
+          <p class=" text-sm-start" style="font-size: 11px;">universitas mbojo bima</p>
+        </div>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="../input_berita.php">Input Berita</a></li>
+          <li><a href="input_jurnal.php">Input Jurnal</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="logout_humas.php">logout</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+      <img src="../assets/img/index3.png" alt="" data-aos="fade-in">
+      <div class="container">
+        <h2 data-aos="fade-up" data-aos-delay="100" class="sitename">Universitas<br>Mbojo Bima</h2>
+        <p data-aos="fade-up" data-aos-delay="200">World Class University</p>
+        <div class="d-flex mt-4" data-aos="fade-up" data-aos-delay="300">
+          <a href="https://wa.me/082147271244" class="btn-get-started">DAFTAR SEKARANG</a>
+        </div>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="100">
+            <img src="../assets/img/tentang kami.jpg" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-6 order-2 order-lg-1 content" data-aos="fade-up" data-aos-delay="200">
+            <h3>Tentang Kami</h3>
+            <p class="fst-italic">
+              Universitas Mbojo Bima merupakan perubahan bentuk dari Sekolah Tinggi Ilmu Sosial dan Politik (STISIP) Mbojo Bima. Berdasarkan Surat Keputusan Menteri Pendidikan Kebudayaan, Riset dan Teknologi Republik Indonesia Nomor: 784/E/0/2022 Tanggal 02 November 2022 tentang Perubahan Bentuk STISIP Mbojo Bima menjadi Universitas Mbojo Bima.
+            </p>
+            <a href="about.html" class="read-more"><span>Baca Selengkapnya</span><i class="bi bi-arrow-right"></i></a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Counts Section -->
+    <section id="counts" class="section counts">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="1232" data-purecounter-duration="1" class="purecounter"></span>
+              <p class="">Mahasiswa Aktif</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-4 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="64" data-purecounter-duration="1" class="purecounter"></span>
+              <p class="">Dosen</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-4 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="42" data-purecounter-duration="1" class="purecounter"></span>
+              <p class="">Tenaga Kependidikan</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Counts Section -->
+
+    <!-- Why Us Section -->
+    <section id="why-us" class="section why-us">
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="why-box">
+              <h3>Kanapa harus Kampus Kami?</h3>
+              <p>
+                program akademik yang berkualitas tinggi dengan fakultas dan staf pengajar yang ahli di bidangnya. Kami dapat memberikan pengalaman pembelajaran yang mendalam dan mempersiapkan Mahasiswa dengan baik untuk karir mereka.
+              </p>
+              <div class="text-center">
+                <a href="prodi.php" class="more-btn"><span>Baca Selengkapnya</span> <i class="bi bi-chevron-right"></i></a>
+              </div>
+            </div>
+          </div><!-- End Why Box -->
+
+          <div class="col-lg-8 d-flex align-items-stretch">
+            <div class="row row-cols-2 row-cols-lg-3 gy-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="col" style="height: 194px;">
+                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                  <i class="bi bi-clipboard-data"></i>
+                  <h4>ilmu administrasi negara</h4>
+                </div>
+              </div><!-- End Icon Box -->
+
+              <div class="col" style="height: 194px;" data-aos="fade-up" data-aos-delay="300">
+                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                  <i class="bi bi-megaphone"></i>
+                  <h4>ilmu komunikasi</h4>
+                  <p></p>
+                </div>
+              </div><!-- End Icon Box -->
+
+              <div class="col" style="height: 194px;" data-aos="fade-up" data-aos-delay="400">
+                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                  <i class="bi bi-globe-asia-australia"></i>
+                  <h4>perdagangan internasional</h4>
+                  <p></p>
+                </div>
+              </div><!-- End Icon Box -->
+
+              <div class="col" style="height: 194px;" data-aos="fade-up" data-aos-delay="500">
+                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                  <i class="bi bi-hospital"></i>
+                  <h4>administrasi kesehatan</h4>
+                  <p></p>
+                </div>
+              </div><!-- End Icon Box -->
+
+              <div class="col" style="height: 194px;" data-aos="fade-up" data-aos-delay="600">
+                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                  <i class="bi bi-cpu"></i>
+                  <h4>sistem dan teknologi informasi</h4>
+                  <p></p>
+                </div>
+              </div><!-- End Icon Box -->
+
+              <div class="col" style="height: 194px;" data-aos="fade-up" data-aos-delay="700">
+                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                  <i class="bi bi-gear-wide-connected"></i>
+                  <h4>teknologi pangan</h4>
+                  <p></p>
+                </div>
+              </div><!-- End Icon Box -->
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Why Us Section -->
+
+    <!-- Features Section -->
+    <!-- /Features Section -->
+
+    <!-- Courses Section -->
+    <section id="courses" class="courses section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Berita</h2>
+        <p class="">Berita Terbaru</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row">
+          <?php
+          include '../koneksi.php';
+          $sql = "SELECT * FROM berita ORDER BY id_berita DESC LIMIT 3 ";
+          $hasil = $con->query($sql);
+          if ($hasil == FALSE){
+            trigger_error("Syntax mysql salah : ".$sql."Error: ".$con->error, E_USER_ERROR);
+          }else{
+            while ($h = $hasil->fetch_array()) {
+              ?>
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+                <div class="course-item">
+                  <img src="../foto_berita/<?php echo $h['foto'] ?>" class="img-fluid" alt="..." style="width: 360px; height: 240px;">
+                  <div class="course-content">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                      <p class="category"><?php echo $h['kategori'] ?></p>
+                      <p class="price"><?php echo $h['tanggal_berita']; ?></p>
+                    </div>
+                    <h3><a href="view_berita.php?kode=<?php echo $h['id_berita']; ?>"><?php echo substr($h['judul_berita'], 0, 80)?></a></h3>
+                    <p class="description"><?php echo substr($h['isi_paragraf_1'], 0, 80)?></p>
+                    <div class="trainer d-flex justify-content-between align-items-center">
+                      <div class="trainer-profile d-flex align-items-center">
+                        <img src="../assets/img/logo-1.png" class="img-fluid" alt="">
+                        <a href="" class="trainer-link"><?php echo $h['penulis'] ?></a>
+                      </div>
+                      <div class="trainer-rank d-flex align-items-center">
+                        <i class="bi bi-person user-icon"></i>&nbsp;35
+                        &nbsp;&nbsp;
+                        <i class="bi bi-heart heart-icon"></i>&nbsp;42
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> <!-- End Course Item-->
+              <?php
+            }
+          }
+          ?> 
+          <div class="text-center mt-4">
+            <a href="kumpulan_berita.php" class="btn btn-outline-warning more-btn"><span>Baca Selengkapnya</span> <i class="bi bi-chevron-right"></i></a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Courses Section -->
+
+    <!-- Trainers Index Section -->
+    <section id="trainers-index" class="section trainers-index">
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="member">
+              <img src="../assets/img/trainers/rektor.jpg" class="img-fluid" alt="">
+              <div class="member-content">
+                <h4>Dr Rifai S.Sos M.Ap</h4>
+                <span>REKTOR UNMBO</span>
+                <p>
+                  
+                </p>
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  
+                </div>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="member">
+              <img src="../assets/img/trainers/ketua yayasan.jpg" class="img-fluid" alt="">
+              <div class="member-content">
+                <h4>Drs H Mukhtar Yasin M.Ap</h4>
+                <span>KETUA YAYASAN PEMBINA PENDIDIKAN MBOJO</span>
+                <p>
+                  
+                </p>
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  
+                </div>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="member">
+              <img src="../assets/img/trainers/pengawas yayasan.png" class="img-fluid" alt="">
+              <div class="member-content">
+                <h4>Kamaluddin S.Sos M.Ap</h4>
+                <span>WAKIL REKTOR I UNMBO</span>
+                <p>
+                  
+                </p>
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  
+                </div>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Trainers Index Section -->
+
+  </main>
+
+  <footer id="footer" class="footer position-relative">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.php" class="logo d-flex align-items-center">
+            <img src="../assets/img/logo-1.png" class="img-fluid" alt="">
+            <span class="sitename">UNMBO</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>Jl. Pierre Tandean, Kel. Mande, Kec. Mpunda </p>
+            <p>Kota Bima, Nusa Tenggara Barat</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>(0374) 123456</span></p>
+            <p><strong>Email:</strong> <span>info@universitasmbojobima.ac.id</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Pintasan</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Terms of service</a></li>
+            <li><a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Waktu Pelayana</h4>
+          <ul>
+            <li><a href="#">Senin - Sabtu</a></li>
+            <li><a href="#">07.30 - 15.30</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12 footer-newsletter">
+          <h4>Komentar</h4>
+          <p>Tinggalkan Komentar</p>
+          <form action="forms/newsletter.php" method="post" class="php-email-form">
+            <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Comment"></div>
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Komentar sudah terkirim. Terimkasih!</div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">UNMBO</strong> <span>Kota Bima, 2024</span></p>
+      <div class="credits">
+        Edited by <a href="#">IT UNMBO</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/php-email-form/validate.js"></script>
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>

