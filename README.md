@@ -31,8 +31,3 @@ Portal resmi **Universitas Mbojo Bima (UNMBO)** berbasis PHP, mencakup modul-mod
 - Teknologi Pangan  
 
 ---
-
-## 🗂️ Struktur Direktori
-
-
-
